@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:q="http://quote.lindenb.org/ontology">
+  <foaf:Person rdf:about="http://en.wikipedia.org/wiki/Louis_Pasteur">
+    <foaf:name>Louis Pasteur</foaf:name>
+  </foaf:Person>
+  <q:Quote>
+    <q:author rdf:resource="http://en.wikipedia.org/wiki/Louis_Pasteur"/>
+    <q:quote xml:lang="en">Science knows no country, because knowledge belongs to humanity, and is the torch which illuminates the world.</q:quote>
+  </q:Quote>
+  <q:Quote>
+    <q:author rdf:resource="http://en.wikipedia.org/wiki/Louis_Pasteur"/>
+    <q:quote xml:lang="en">I am utterly convinced that Science and Peace will triumph over Ignorance and War, that nations will eventually unite not to destroy but to edify, and that the future will belong to those who have done the most for the sake of suffering humanity.</q:quote>
+  </q:Quote>
+  <foaf:Person rdf:about="http://en.wikipedia.org/wiki/Isaac_Asimov">
+    <foaf:name>Isaac Asimov</foaf:name>
+  </foaf:Person>
+  <q:Quote>
+    <q:author rdf:resource="http://en.wikipedia.org/wiki/Isaac_Asimov"/>
+    <q:quote xml:lang="en">Violence is the last refuge of the incompetent.</q:quote>
+  </q:Quote>
+  <q:Quote>
+    <q:author rdf:resource="http://en.wikipedia.org/wiki/Isaac_Asimov"/>
+    <q:quote xml:lang="en">Never let your sense of morals prevent you from doing what is right.</q:quote>
+  </q:Quote>
+  <q:Quote>
+    <q:author rdf:resource="http://en.wikipedia.org/wiki/Isaac_Asimov"/>
+    <q:quote xml:lang="en">Creationists make it sound as though a "theory" is something you dreamt up after being drunk all night</q:quote>
+  </q:Quote>
+  <q:Quote>
+    <q:author rdf:resource="http://en.wikipedia.org/wiki/Isaac_Asimov"/>
+    <q:quote xml:lang="fr">Si le savoir peut créer des problèmes, ce n'est pas l'ignorance qui les résoudra.</q:quote>
+  </q:Quote>
+</rdf:RDF>

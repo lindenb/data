@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\title{Programing Hacks}
+\author{Pierre Lindenbaum PhD.}
+\date{September 25, 2011}
+
+\begin{document}
+\maketitle
+\section{Java}
+\subsection{Double Brace Initialization}
+\url{http://www.c2.com/cgi/wiki?DoubleBraceInitialization}
+\begin{verbatim}
+removeProductsWithCodeIn(new HashSet<String>() {{
+   add("XZ13s");
+   add("AB21/X");
+   add("YYLEX");
+   add("AR5E");
+ }});
+\end{verbatim}
+\subsection{Joint union in type parameter variance}
+\begin{verbatim}
+public class Baz<T extends Foo & Bar> {}
+\end{verbatim}
+\section{C/C++}
+\subsection{List predefined macros in gcc}
+\url{http://en.wikipedia.org/wiki/C_preprocessor#Compiler-specific_predefined_macros}
+\begin{verbatim}
+gcc -dM -E - < /dev/null
+\end{verbatim}
+
+\section{HTML}
+\subsection{multiple file input in Firefox 3.6}
+\url{http://hacks.mozilla.org/2009/12/multiple-file-input-in-firefox-3-6/}
+\begin{verbatim}
+<input type="file" multiple=""/>
+\end{verbatim}
+
+\end{document}
