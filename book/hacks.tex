@@ -28,6 +28,20 @@ public class Baz<T extends Foo & Bar> {}
 gcc -dM -E - < /dev/null
 \end{verbatim}
 
+\section{Unix}
+\subsection{Regex with one column}
+\begin{verbatim}
+$ echo -e "A B C\nA T G C\n" | awk -F ' ' '($2 ~ "B" )'
+A B C
+\end{verbatim}
+\subsection{Replace one column}
+\begin{verbatim}
+$ echo -e "A B C\nA T G C\n" | awk -F ' ' '($3 = "B" )'
+A B B
+A T B C
+  B
+
+\end{verbatim}
 \section{HTML}
 \subsection{multiple file input in Firefox 3.6}
 \url{http://hacks.mozilla.org/2009/12/multiple-file-input-in-firefox-3-6/}
