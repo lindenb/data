@@ -1,5 +1,8 @@
-all:hacks.pdf
-hacks.pdf:hacks.dvi
+all:hacks.pdf tcltk.pdf bio.pdf
+
+%.pdf:%.dvi
 	dvipdf $<
-hacks.dvi:hacks.tex
+%.dvi:%.tex
 	latex $<
+clean:
+	rm -f *.dvi *.log *.aux *.out

@@ -6,6 +6,34 @@
 
 \begin{document}
 \maketitle
+\section{C/C++}
+\subsection{Scanning a directory tree}
+\url{http://stackoverflow.com/questions/3833581}
+\begin{verbatim}
+static int callback(const char *fpath, const struct stat *sb, int typeflag) {
+	{
+	(...)
+	}
+ftw(".", callback, 16);
+\end{verbatim}
+
+\section{Make}
+\subsection{Patterns}
+\begin{verbatim}
+%.pdf:%.dvi
+	dvipdf $<
+%.dvi:%.tex
+	latex $<
+\end{verbatim}
+\subsection{Phony targets}
+\url{http://www.gnu.org/s/hello/manual/make/Phony-Targets.html}
+'.PHONY' declares the target as "symbolic". e.g. "clean". It will be executed even if there is a file named "clean".
+\begin{verbatim}
+.PHONY : clean
+clean:
+             rm *.o temp
+\end{verbatim}
+
 \section{Java}
 \subsection{Double Brace Initialization}
 \url{http://www.c2.com/cgi/wiki?DoubleBraceInitialization}
@@ -42,11 +70,59 @@ A T B C
   B
 
 \end{verbatim}
-\section{HTML}
+\subsection{csplit }
+split a file into sections determined by context lines
+
+\subsection{mv more than on file}
+\begin{verbatim}
+mv path/{*.tex,*.cpp} WS/
+\end{verbatim}
+
+\subsection{speed up sort}
+\begin{verbatim}
+export LC_ALL=C
+\end{verbatim}
+
+\subsection{Adding message when logging a server}
+modify: /etc/motd
+\subsection{finding executables}
+\begin{verbatim}
+ find ./ -type f -perm -o+rx
+\end{verbatim}
+
+\subsection{Merge PDF}
+\begin{verbatim}
+gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=jeter.pdf -dBATCH status.*.pdf
+\end{verbatim}
+
+\section{HTML/Mozilla}
 \subsection{multiple file input in Firefox 3.6}
 \url{http://hacks.mozilla.org/2009/12/multiple-file-input-in-firefox-3-6/}
 \begin{verbatim}
 <input type="file" multiple=""/>
+\end{verbatim}
+\subsection{Mozilla JS shell}
+\begin{verbatim}
+ xpcshell-2.0 -e 'print("Hello");'
+\end{verbatim}
+\section{Postcript}
+Including a picture: use the run operator.
+\begin{verbatim}
+%!PS
+0 0 moveto
+100 100 lineto
+stroke
+(jeter.eps) run
+0 0 moveto
+100 100 lineto
+stroke
+\end{verbatim}
+\section{Github}
+You've cloned a repo but you want to update the data from your colleague's original repository:
+\begin{verbatim}
+
+$ git remote add parent "https://github.com/michaelbarton/bioinformatics-career-survey.git"
+$ git pull parent master
 \end{verbatim}
 
 \end{document}
