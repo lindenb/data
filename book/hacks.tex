@@ -72,8 +72,18 @@ A T B C
 \end{verbatim}
 \subsection{csplit }
 split a file into sections determined by context lines
+\subsection{fold: split lines}
+\begin{verbatim}
+$ echo "AAAAAAAAAAAAAAAAAA" | fold -w 3
+AAA
+AAA
+AAA
+AAA
+AAA
+AAA
+\end{verbatim}
 
-\subsection{mv more than on file}
+\subsection{mv more than one file}
 \begin{verbatim}
 mv path/{*.tex,*.cpp} WS/
 \end{verbatim}
@@ -124,5 +134,15 @@ You've cloned a repo but you want to update the data from your colleague's origi
 $ git remote add parent "https://github.com/michaelbarton/bioinformatics-career-survey.git"
 $ git pull parent master
 \end{verbatim}
+\section{Javascript}
+\paragraph{Mozilla/Xul interpreter:}
+\begin{verbatim}
+export LD_LIBRARY_PATH=/usr/lib/xulrunner-2.0
+JavaScript-C 1.8.0 pre-release 1 2007-10-03
+usage: xpcshell [-g gredir] [-r manifest]... [-PsSwWxCij] [-v version] [-f scriptfile] [-e script] [scriptfile] [scriptarg...]
+\end{verbatim}
+\section{Ecore/XMI}
+\paragraph{Where is the XML schema for ECore}
+\url{http://dev.eclipse.org/viewcvs/viewvc.cgi/org.eclipse.emf/org.eclipse.emf/plugins/org.eclipse.emf.ecore/model/Ecore.xsd?view=co&root=Modeling_Project} .
 
 \end{document}
