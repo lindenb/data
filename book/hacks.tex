@@ -105,6 +105,40 @@ modify: /etc/motd
 gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=jeter.pdf -dBATCH status.*.pdf
 \end{verbatim}
 
+\subsection{passwordless connection with ssh}
+on client side:
+\begin{verbatim}
+$ ssh-keygen -t rsa
+Enter file in which to save the key (~/.ssh/id_rsa): 
+/home/lindenb/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in ~/.ssh/id_rsa.
+Your public key has been saved in ~/.ssh/id_rsa.pub.
+The key fingerprint is:
+xxx lindenb@hardyweinberg
+
+##tell ssh-agent
+$ ssh-add
+
+## transfert your key
+
+cat .ssh/id_rsa.pub | ssh LOGIN@HOST 'cat > jeter.keys'
+
+\end{verbatim}
+on server side
+\begin{verbatim}
+cat jeter.keys  >>  .ssh/authorized_key
+\end{verbatim}
+
+\section{Virtual ssh directory}
+\begin{verbatim}
+sudo apt-get install sshfs
+mkdir VIRTUAL
+sshfs  LOGIN@HOST:/data/users/me VIRTUAL
+\end{verbatim}
+
 \section{HTML/Mozilla}
 \subsection{multiple file input in Firefox 3.6}
 \url{http://hacks.mozilla.org/2009/12/multiple-file-input-in-firefox-3-6/}
