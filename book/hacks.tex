@@ -145,4 +145,30 @@ usage: xpcshell [-g gredir] [-r manifest]... [-PsSwWxCij] [-v version] [-f scrip
 \paragraph{Where is the XML schema for ECore}
 \url{http://dev.eclipse.org/viewcvs/viewvc.cgi/org.eclipse.emf/org.eclipse.emf/plugins/org.eclipse.emf.ecore/model/Ecore.xsd?view=co&root=Modeling_Project} .
 
+\section{Apache2}
+allowing public_html:
+via: http://kimbriggs.com/computers/computer-notes/linux-notes/apache2-public_html-virtual-directories.file
+
+
+
+me@myhost$ cd /etc/apache2/mods-enabled
+me@myhost$ sudo ln -s ../mods-available/userdir.conf userdir.conf
+me@myhost$ sudo ln -s ../mods-available/userdir.load userdir.load
+me@myhost$ sudo /etc/init.d/apache2 restart 
+$ mkdir -p ~/public_html/cgi-bin
+(...)
+ chmod a+x flickr.cgi
+ 
+edit:  sudo nano /etc/apache2/apache2.conf
+and append:
+
+<Directory /home/*/public_html/cgi-bin/>
+Options ExecCGI
+SetHandler cgi-script
+</Directory>
+
+
+
+
+
 \end{document}
